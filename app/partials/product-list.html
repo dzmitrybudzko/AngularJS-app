@@ -1,0 +1,54 @@
+           <section ng-controller='sortingCtrl as sort'>
+            
+              <div class="col-md-2">
+                  
+                  <label>Search:<br>
+                      <input type="text" class="form-control input-sm" ng-model="query" size="15">
+                  </label><br>
+
+                  <label>Price:<br>
+                    <input ng-model="sort.price.from" type="text" size="3"> - <input ng-model="sort.price.to" 
+                    type="text" size="3">
+                  </label>
+
+                  <ul class="country">
+                    <h4>Country</h4>
+                    <li ng-repeat="country in sort.countries">
+                     <label><input type="checkbox" ng-model="sort.search.manufacturer" 
+                      ng-true-value="'{{country}}'" ng-false-value="''">{{country}}</label>
+                    </li>
+                  </ul>  
+
+                  <ul class="category" >
+                    <h4>Category</h4>
+                      <li ng-repeat="category in sort.categories">
+                        <label><input type="checkbox" ng-model="sort.search.dataId"
+                         ng-true-value="'{{category.cat}}'" ng-false-value="''">{{category.name}}</label>
+                    </li> 
+                  </ul>
+
+              </div>
+            
+              <div class="col-md-7">
+
+                <select class="form-control input-sm" id="selectSorting"
+                  ng-model="sort.dataOpts.m1" ng-change="sort.sortProducts(sort.dataOpts.m1)">
+                    <option ng-repeat="opt in sort.dataOpts.opts" ng-value="opt.val">{{opt.name}}</option>
+                </select>
+
+                <ul class="listOfProducts">
+                  <li ng-repeat="product in products | filter: sort.search | filter: query" class="bouncy-slide-down"
+                     ng-if="sort.price.from < product.price && product.price < sort.price.to" >
+                    
+                     <product-card product-attr="product"></product-card>
+                    
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-md-3">              
+                <adv info="product"></adv>
+              </div>
+          
+          </section> 
+    

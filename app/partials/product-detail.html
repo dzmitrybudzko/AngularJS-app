@@ -1,0 +1,23 @@
+			<div>
+
+			    <div ng-repeat="product in products" ng-if="product.dataId === gardenId"><br>
+
+			       <div class="cont1"><img class="xl-img" ng-src="{{product.linkToImg}}"></div>
+                
+                <div class="cont2">
+                  
+                  <strong>{{product.title}}</strong><br><br>
+
+                  <span>{{product.description}}</span><br><br>
+                  
+                  <span>{{product.manufacturer}} </span><hr>
+                  
+                  <em>{{(product.availability > 0) ? "В наличии. Доступно " + product.availability + " штук.": "Нет в наличии. Под заказ. "}}</em><br>
+                  
+                  <em>Цена:  {{product.price | currency }}</em><br><br>
+                  
+                  <div buy-block></div>
+
+                </div>
+          </div>
+      </div>

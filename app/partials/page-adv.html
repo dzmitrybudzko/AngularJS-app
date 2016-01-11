@@ -1,0 +1,45 @@
+
+<style>
+	.adv {
+		margin-top: 40px;
+	}
+	.fl-right {
+		float: right;
+		color: darkred;
+ 	}
+	.panel-footer {
+		font-weight: bold;
+	}
+	.str {
+		text-decoration: line-through;
+		color: #999;
+	}
+</style>
+
+<div ng-controller="gardenAdvCtrl as adv">
+	<div ng-repeat="(i, product) in adv.saleProducts" ng-show="i === adv.indx" class="panel panel-default">
+		
+
+		<div class="panel-heading"> 
+			<a href="#/products/{{product.dataId}}"><strong>{{product.title}}</strong><br></a>
+		</div>
+		
+		<div class="panel-body">
+			<a href="#/products/{{product.dataId}}"><img ng-src="{{product.linkToImg}}"  width="190"></a>
+		</div>
+		
+		<div class="panel-footer">
+			<a href="#/products/{{product.dataId}}">
+		
+				<div class="fl-right">
+					Buy now!!! <br>
+					Save {{ product.price * 0.2 | currency }}!
+				</div>
+		
+				<span class="str"> {{ product.price | currency }}</span><br>
+				{{ product.price * 0.8 | currency }}
+		
+			</a>
+		</div>
+	</div>
+</div>

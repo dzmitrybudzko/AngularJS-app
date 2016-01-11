@@ -1,0 +1,120 @@
+html{
+ margin: 0;
+ padding: 0;
+ font-family: cursive, Open Sans, Arial;
+ //background-color: #777;
+ color: #777;
+}
+#page {
+ width: 1024px;
+ margin: auto;
+}
+
+/* header */ 
+header {
+  border: solid 2px #777;
+  background: #eee;
+  border-radius: 15px 15px 0 0;
+}
+#logo-box {
+ padding: 10px 20px;
+ width: 160px;
+ display: inline-block;
+}
+#slogan-box {
+  float: right;
+  padding: 20px 20px 0px 0px;
+}
+
+/* navigation */
+nav ul {
+ margin: 0px;
+ padding: 5px 0px;
+ background-color: #eee;
+ text-align: center;
+ border: solid 2px #777;
+ border-top: none;
+ border-radius: 0 0 15px 15px;
+}
+nav ul li {
+ padding: 8px 10px;
+ display: inline;
+}
+nav ul li:hover {
+ border: solid 2px #777;
+ border-radius: 7px;
+ padding: 8px;
+}
+nav ul li a {
+ color: #555;
+ text-decoration: none;
+ font-weight: bold;
+}
+nav ul li.selected {
+  background: #eee;
+  border: solid 3px #777;
+  border-radius: 7px;
+  padding: 8px;
+}
+
+section {
+  margin-top: 5px;
+  padding: 10px;
+  height: auto;
+  overflow: auto;
+  border: solid 2px #777;
+  background: #eee;
+  border-radius: 15px;
+}
+
+footer {
+  margin-top: 10px;
+  padding-left: 20px;
+  border: solid 2px #777;
+  background: #eee;
+  border-radius: 15px;
+ }
+
+li {
+  list-style-type: none;
+ }
+.listOfProducts {
+  margin-top: 40px;
+}
+.listOfProducts li {
+  border: solid 2px #777;
+  background: white;
+  border-radius: 10px;
+  padding: 5px;
+  height: 160px;
+  margin-top: 3px;
+}
+.listOfProducts li img {
+  max-height: 140px;
+  margin-left: 5px;
+  max-width: 140px;
+}
+.cont1 {
+  display: table-cell;
+}
+.cont2 {
+  display: table-cell;
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.xl-img {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.country {
+  margin-top: 10px;
+}
+
+#selectSorting {
+  width: 140px;
+  float: right;
+
+  
+}
