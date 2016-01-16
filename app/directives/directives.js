@@ -16,10 +16,12 @@ myApp.directive('buyBlock', function() {
   return {
     restrict: "AC",
     template: "<div>" + 
-            		"<button class='btn btn-success btn-lg buyaction'>Buy now</button>" + 
+            		"<button class='btn btn-success btn-lg buyaction' ng-click='ctrl.btnBuy()'>Buy now</button>" + 
                 	"<div id='result'></div>" + 
     		  "</div>",
-    controller: "buyCtrl"
+    controller: "buyCtrl",
+    controllerAs: "ctrl",
+    bindToController: true
   }
 })
 

@@ -29,32 +29,11 @@ header {
 /* navigation */
 nav ul {
  margin: 0px;
- padding: 5px 0px;
- background-color: #eee;
- text-align: center;
+ font-weight: bold;
+ background-color: #ddd;
  border: solid 2px #777;
  border-top: none;
  border-radius: 0 0 15px 15px;
-}
-nav ul li {
- padding: 8px 10px;
- display: inline;
-}
-nav ul li:hover {
- border: solid 2px #777;
- border-radius: 7px;
- padding: 8px;
-}
-nav ul li a {
- color: #555;
- text-decoration: none;
- font-weight: bold;
-}
-nav ul li.selected {
-  background: #eee;
-  border: solid 3px #777;
-  border-radius: 7px;
-  padding: 8px;
 }
 
 section {
@@ -96,6 +75,7 @@ li {
 }
 .cont1 {
   display: table-cell;
+  padding-top: 15px;
 }
 .cont2 {
   display: table-cell;
@@ -115,6 +95,4 @@ li {
 #selectSorting {
   width: 140px;
   float: right;
-
-  
 }

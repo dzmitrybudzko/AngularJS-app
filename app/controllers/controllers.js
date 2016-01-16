@@ -3,10 +3,16 @@
 
 var myApp = angular.module('gardenControllers', []);
 
+
 myApp.controller('gardenListCtrl', ['$scope', 'fetchDataFactory', 
 	function ($scope, fetchDataFactory) {
-
-		$scope.products = fetchDataFactory.getProducts();
+		
+		var promise = fetchDataFactory.getProducts();
+  		
+  		promise.then(function(data) {
+     		$scope.products = data
+  		})
+		
 }]);
 
 
@@ -55,8 +61,12 @@ myApp.controller('gardenAdvCtrl', ['$scope', '$timeout', 'fetchDataFactory',
   	var me = this;
 	function startAnimation() {
 			
-		$scope.products = fetchDataFactory.getProducts();
-		
+		var promise = fetchDataFactory.getProducts();
+  		
+  		promise.then(function(data) {
+     		$scope.products = data
+  		})
+
 		me.saleProducts = [];
 		for (var i = 0; i < $scope.products.length; i = i + 3) {
 			me.saleProducts.push($scope.products[i])
@@ -87,11 +97,10 @@ myApp.controller('gardenAdvCtrl', ['$scope', '$timeout', 'fetchDataFactory',
 
 
 myApp.controller('buyCtrl', ['$scope', '$http', function($scope, $http) {
+		
+		this.btnBuy = function() {
 	
-	$(document).ready(function(){
-
-		$( ".buyaction" ).click(function(){
-	
+			// $http({
 			$.ajax({
 				  method: "POST",
 				  url: "bought-items",
@@ -99,17 +108,16 @@ myApp.controller('buyCtrl', ['$scope', '$http', function($scope, $http) {
 				})
 				    .then(
 				    	function(response) {
-				    		$("#result").html(response);
-    						alert( "success with POST" );
+				    		//$("#result").html(response);
+    						console.log( "success with POST" );
   						},
   						function() {
-  							alert( "error with POST" );
+  							console.log( "error with POST" );
   						})
 			  	
-			//alert("Buy!!!");
-		});
+			//console.log("Buy!!!");
 
-	});	
+		}		
 
 }]);
 

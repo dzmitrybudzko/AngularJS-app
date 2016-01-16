@@ -1,20 +1,20 @@
 			<div>
 
-			    <div ng-repeat="product in products" ng-if="product.dataId === gardenId"><br>
+			    <div ng-repeat="product in products" ng-if="product.dataId === gardenId">
 
 			       <div class="cont1"><img class="xl-img" ng-src="{{product.linkToImg}}"></div>
                 
                 <div class="cont2">
                   
-                  <strong>{{product.title}}</strong><br><br>
+                  <p><strong>{{product.title}}</strong></p>
 
-                  <span>{{product.description}}</span><br><br>
+                  <p><span>{{product.description}}</span></p>
                   
-                  <span>{{product.manufacturer}} </span><hr>
+                  <p><span>{{product.manufacturer}} </span></p>
                   
-                  <em>{{(product.availability > 0) ? "В наличии. Доступно " + product.availability + " штук.": "Нет в наличии. Под заказ. "}}</em><br>
+                  <p><em>{{(product.availability > 0) ? "В наличии. Доступно " + product.availability + " штук.": "Нет в наличии. Под заказ. "}}</em></p>
                   
-                  <em>Цена:  {{product.price | currency }}</em><br><br>
+                  <p><em>Цена:  {{product.price | currency }}</em></p>
                   
                   <div buy-block></div>
 
