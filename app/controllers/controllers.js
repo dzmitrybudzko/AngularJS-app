@@ -16,15 +16,15 @@ myApp.controller('gardenListCtrl', ['$scope', 'fetchDataFactory',
 }]);
 
 
-myApp.controller('gardenDetailCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
-    
-    $http.get('database.json')
-    
-    .success(function(data) {
-      $scope.products = data;
-      $scope.gardenId = $routeParams.productId;
-    });
+myApp.controller('gardenDetailCtrl', ['$scope', '$routeParams', '$http', 'fetchDataFactory',
+  	function($scope, $routeParams, $http, fetchDataFactory) {
+
+		var promise = fetchDataFactory.getProducts();
+  		
+  		promise.then(function(data) {
+     		$scope.products = data;
+     		$scope.gardenId = $routeParams.productId;
+  		})
 
   }]);
 
@@ -99,14 +99,13 @@ myApp.controller('gardenAdvCtrl', ['$scope', '$timeout', 'fetchDataFactory',
 myApp.controller('buyCtrl', ['$scope', '$http', function($scope, $http) {
 		
 		this.btnBuy = function() {
-	
-			// $http({
-			$.ajax({
+			
+			$http({
 				  method: "POST",
 				  url: "bought-items",
-				  data: { id: $scope.gardenId }
+				  data: {  id: $scope.gardenId	}
 				})
-				    .then(
+					.then(
 				    	function(response) {
 				    		//$("#result").html(response);
     						console.log( "success with POST" );

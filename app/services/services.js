@@ -19,10 +19,9 @@ myApp.factory('fetchDataFactory', function($http, $q) {
     .error(function(data, status){
       console.log(data);
     })
- 	
+
  	return deferred.promise;
   };
-
 
   return factObj;
 });
